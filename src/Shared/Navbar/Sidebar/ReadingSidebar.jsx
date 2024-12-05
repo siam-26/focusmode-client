@@ -161,14 +161,14 @@ const ReadingSidebar = () => {
         <div className={`bg-white rounded-xl shadow-lg p-3 flex flex-col items-start${isCollapsed ? " gap-5":" gap-4 "}`}>
               {/* Menu Items */}
               {menuItems
-          .filter(item => {
-            if (location.pathname === "/practices") {
-              // Hide items 2-6 on the '/practices' route
-              return !["/stopwatch", "/timer", "/todo-list", "/complete", "/incomplete"].includes(item.path);
-            }
-            // Show all items for the '/' route
-            return true;
-          })
+          // .filter(item => {
+          //   if (location.pathname === "/practices") {
+          //     // Hide items 2-6 on the '/practices' route
+          //     return !["/stopwatch", "/timer", "/todo-list", "/complete", "/incomplete"].includes(item.path);
+          //   }
+          //   // Show all items for the '/' route
+          //   return true;
+          // })
           .map((item, index) => (
             <Link key={index} to={item.path}>
               <div
