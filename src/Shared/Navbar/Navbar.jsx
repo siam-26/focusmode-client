@@ -18,18 +18,33 @@ const Navbar = () => {
                 <h3 className="text-lg md:text-xl font-semibold">Focus Mode</h3>
             </div>
 
-            <div className="h-11">
+            <div className="h-11 flex justify-center items-center rounded-md bg-gray-200 text-gray-700  shadow-none ">
          
-                <Link to="/" >
-                <Button onClick={()=> setIsPractice(1)} className={`${isPractice === 2 ? "bg-gray-100 text-gray-800 rounded-md shadow-lg h-10":"bg-gray-400 text-gray-700 rounded-none shadow-none h-11"}  px-3`}>
-                Reading
-                </Button>
-                    
-                </Link>
-                <Link to="practices" >
-                <Button color="default" variant="filled" onClick={()=> setIsPractice(2)} className={`${isPractice === 1 ? "bg-gray-100 text-gray-800 rounded-md shadow-lg h-10":"bg-gray-400 text-gray-700 rounded-none shadow-none h-11"} px-3`}>
-                        Practice
-                </Button>
+                <Link to="/"  >
+                <button
+                        onClick={() => setIsPractice(1)}
+                        className={`${
+                            isPractice === 1
+                            ? "bg-gray-100 text-gray-800 rounded-md shadow-xl h-[42px] transition-all duration-300 inline-block"
+                            : ""
+                        } px-3`}
+                        >
+                        Reading
+                        </button>
+
+                        <Link to="practices">
+                        <button
+                            onClick={() => setIsPractice(2)}
+                            className={`${
+                            isPractice === 2
+                                ? "bg-gray-100 text-gray-800 rounded-md shadow-lg h-[42px] transition-all duration-300 inline-block"
+                                : ""
+                            } px-3`}
+                        >
+                            Practice
+                        </button>
+                        </Link>
+
                     
                 </Link>
 
