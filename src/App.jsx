@@ -1,6 +1,8 @@
 import { RouterProvider } from "react-router-dom"
 import router from "./Router/Route"
 import { SidebarProvider } from "./context/responsiveSidebar"
+import { Toaster } from "react-hot-toast"
+
 
 function App() {
 
@@ -11,6 +13,10 @@ function App() {
           <RouterProvider router={router} />
         </div>
       </div>
+      <Toaster
+      position="top-center"
+      reverseOrder={false}
+    />
     </SidebarProvider>
   )
 }
