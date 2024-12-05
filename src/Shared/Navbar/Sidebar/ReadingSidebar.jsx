@@ -155,27 +155,57 @@ const ReadingSidebar = () => {
   ];
 
   return (
+    <>
     <motion.div
-      className="  flex flex-col items-start gap-4"
+      className=" hidden lg:flex flex-col items-start gap-4 z-[100]"
       variants={sidebarVariants}
       animate={isCollapsed ? "collapsed" : "expanded"}
     >
       
         <div className="bg-white h-[400px] overflow-hidden rounded-xl shadow-lg">
-        <div className={` p-3 flex flex-col items-start${isCollapsed ? " gap-6":" gap-5 "}`}>
+        <div className={` p-3 lg:flex hidden flex-col items-start${isCollapsed ? " gap-6":" gap-5 "}`}>
               {/* Menu Items */}
-              {menuItems
-          // .filter(item => {
-          //   if (location.pathname === "/practices") {
-          //     // Hide items 2-6 on the '/practices' route
-          //     return !["/stopwatch", "/timer", "/todo-list", "/complete", "/incomplete"].includes(item.path);
-          //   }
-          //   // Show all items for the '/' route
-          //   return true;
-          // })
-          .map((item, index) => (
+              {menuItems.map((item, index) => (
             <Link key={index} to={item.path}>
               <div
+                className={`flex items-center gap-2 text-[#7e8088] font-semibold ${
+                  location.pathname === item.path ? "text-green-500" : ""
+                }`}
+              >
+                <span className="text-xl">{item.icon}</span>
+                {!isCollapsed && <p>{item.label}</p>}
+              </div>
+            </Link>
+          ))}
+
+        </div>
+     
+        </div>
+      {/* Toggle Button */}
+      <div className="flex justify-end w-[85%]">
+      <button
+        onClick={toggleSidebar}
+        className="text-gray-500 text-xl hover:text-gray-800 mb-4 bg-white rounded-xl shadow-lg p-3"
+      >
+        {isCollapsed ? <BiMenuAltLeft /> : <HiOutlineMenuAlt2 />}
+      </button>
+      </div>
+    
+    </motion.div>  
+
+    <motion.div
+      className="lg:hidden  flex flex-col items-start gap-4 z-[100]"
+      variants={sidebarVariants}
+      animate={isCollapsed ? "collapsed" : "expanded"}
+    >
+      
+        <div className="bg-white h-[400px] overflow-hidden rounded-xl shadow-lg">
+    
+        <div className={` p-3 flex lg:hidden flex-col items-start${isCollapsed ? " gap-6":" gap-5 "}`}>
+              {/* Menu Items */}
+              {menuItems.map((item, index) => (
+            <Link key={index} to={item.path}>
+              <div   onClick={toggleSidebar}
                 className={`flex items-center gap-2 text-[#7e8088] font-semibold ${
                   location.pathname === item.path ? "text-green-500" : ""
                 }`}
@@ -198,7 +228,9 @@ const ReadingSidebar = () => {
       </button>
       </div>
     
-    </motion.div>
+    </motion.div>  
+    </>
+    
   );
 };
 

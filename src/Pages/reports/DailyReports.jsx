@@ -6,7 +6,7 @@ const DailyReports = () => {
     return (
         <div>
             <h2 className='text-xl font-semibold text-gray-800 mb-10'>Daily Reports Chart</h2>
-            <div className='flex min-w-full  justify-center items-center gap-3'>
+            <div className='flex min-w-full lg:flex-row flex-col  justify-center items-center gap-3'>
             
                 <PieChartComponent></PieChartComponent>
                 <Dailybar></Dailybar>

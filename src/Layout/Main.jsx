@@ -13,19 +13,33 @@ const Main = () => {
       collapsed: { marginLeft: "6px", transition: { duration: 0.3 } },
     };
     return (
-        <div>
+        <div className="relative">
             <Navbar />
-            <div className="flex mt-3 md:mt-5">
-                <div className="  border-0 ">
+            <div className={`hidden lg:flex mt-3 md:mt-5 `}>
+                <div className={"  border-0 "}>
                     <ReadingSidebar />
                 </div>
                 <motion.div
-                    className="flex-1"
+                    className={`flex-1`}
                     variants={outletVariants}
                     animate={isCollapsed ? "collapsed" : "expanded"}
                 >
                     <Outlet />
                 </motion.div>
+                {/* <div className="w-10/12">
+                    <Outlet />
+                </div> */}
+            </div>
+
+            <div className={`flex lg:hidden mt-3 md:mt-5 `}>
+                <div className={`${isCollapsed === false ? "fixed z-[100]":""}  border-0 `}>
+                    <ReadingSidebar />
+                </div>
+                <div className={`${isCollapsed === false ? "fixed z-[50] w-full opacity-50":"w-full"}  border-0 `}
+                   
+                >
+                    <Outlet />
+                </div>
                 {/* <div className="w-10/12">
                     <Outlet />
                 </div> */}

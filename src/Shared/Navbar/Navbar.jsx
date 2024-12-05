@@ -25,7 +25,7 @@ const Navbar = () => {
                         onClick={() => setIsPractice(1)}
                         className={`${
                             isPractice === 1
-                            ? "bg-gray-100 text-gray-800 rounded-md shadow-xl h-[42px] transition-all duration-300 inline-block"
+                            ? "bg-gray-100 text-gray-800 rounded-md shadow-lg h-[42px] transition-all duration-300 inline-block"
                             : ""
                         } px-3`}
                         >
