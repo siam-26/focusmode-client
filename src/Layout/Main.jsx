@@ -15,7 +15,7 @@ const Main = () => {
     return (
         <div>
             <Navbar />
-            <div className="flex mt-5">
+            <div className="flex mt-3 md:mt-5">
                 <div className="  border-0 ">
                     <ReadingSidebar />
                 </div>

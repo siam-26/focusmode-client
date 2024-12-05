@@ -3,6 +3,8 @@ import DateTimeDisplay from './DateAndTimer/DateTimeDisplay/DateTimeDisplay';
 import Timer from './DateAndTimer/Timer/Timer';
 import { Button, Select } from 'antd';
 import { useState } from 'react';
+import { FaPause, FaPlay, FaStop } from 'react-icons/fa';
+import { div } from 'framer-motion/client';
 
 
 const Home = () => {
@@ -64,25 +66,26 @@ const Home = () => {
   };
 
   return (
-    <div className="flex gap-4">
-      <div className="w-1/2">
+    <div className="flex gap-4 flex-col md:flex-row mb-5 md:mb-0">
+      <div className="md:w-1/2">
         <div className="bg-white rounded-lg">
           <DateTimeDisplay />
         </div>
 
-        <div className="mt-5">
+        <div className="mt-3 md:mt-5">
           <Timer time={time} timerRunning={timerRunning} />
         </div>
       </div>
 
-      <div className="flex justify-center items-center bg-white w-1/2 rounded-lg">
-        <div className="w-4/5 bg-green-500 p-6 rounded-lg">
+      <div className="flex justify-center items-center py-5 md:py-0 bg-white md:w-1/2 rounded-lg">
+        <div className="w-4/5 rounded-lg">
           {/* Subject Dropdown */}
           <div>
-            <p className="text-white">Subject</p>
+            <p className="text-[#4B5563] font-semibold mb-3">Subject</p>
             <Select
               value={subject}
-              style={{ width: 200 }}
+              // style={{ width: '' }}
+              className='w-full'
               onChange={handleSubjectChange}
               options={[
                 { label: 'Math', value: 'Math' },
@@ -93,11 +96,12 @@ const Home = () => {
           </div>
 
           {/* Chapter Dropdown */}
-          <div className="mt-4">
-            <p className="text-white">Chapter</p>
+          <div className="mt-4 mb-10">
+            <p className="text-[#4B5563] font-semibold mb-3">Chapter</p>
             <Select
               value={chapter}
-              style={{ width: 200 }}
+              // style={{ width: '' }}
+              className='w-full'
               onChange={handleChapterChange}
               options={[
                 { label: 'Chapter 1', value: 'Chapter 1' },
@@ -108,20 +112,30 @@ const Home = () => {
           </div>
 
           {/* Start, Pause, Stop, Reset Buttons */}
-          <div className="mt-4">
+          <div className="mt-4 flex items-center gap-1">
             {!timerRunning ? (
-              <Button type="primary" block onClick={startTimer}>
-                Start
-              </Button>
+              // <Button type="primary" block onClick={startTimer}>
+              //   Start
+              // </Button>
+              <div className='cursor-pointer bg-blue-500 text-white p-[7px] rounded-md'>
+                <FaPlay className='' onClick={startTimer}/>
+                </div>
             ) : (
-              <Button type="danger" block onClick={pauseTimer}>
-                Pause
-              </Button>
+              // <Button type="danger" block onClick={pauseTimer}>
+              //   Pause
+              // </Button>
+              <div className='cursor-pointer bg-blue-500 text-white p-[7px] rounded-md'>
+                <FaPause className='' onClick={pauseTimer}/>
+                </div>
             )}
-            <Button className="mt-2" type="primary" block onClick={stopTimer}>
+            {/* <Button className="mt-2" type="primary" block onClick={stopTimer}>
               Stop
-            </Button>
-            <Button className="mt-2" type="default" block onClick={resetTimer}>
+            </Button> */}
+<div className='cursor-pointer bg-blue-500 text-white p-[7px] rounded-md'>
+                
+            <FaStop className='' onClick={stopTimer}/>
+                </div>
+            <Button className="w-9/12 bg-blue-500 hover:bg-blue-400 text-white rounded-md" type="default" block onClick={resetTimer}>
               Reset
             </Button>
           </div>
