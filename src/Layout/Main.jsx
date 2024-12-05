@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <div>
             <Navbar />
-            <div className="flex gap-8 bg-red-500 mt-5">
+            <div className="flex gap-8 mt-5">
                 <div className="bg-white w-2/12 border-0 rounded-lg">
                     <ReadingSidebar />
                 </div>
