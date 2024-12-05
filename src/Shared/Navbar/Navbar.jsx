@@ -2,8 +2,15 @@ import { Button } from "antd";
 import { FiArrowLeft } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+    const [isPractice, setIsPractice] = useState(1);  // State to manage toggle
+
+    const handleToggle = (checked) => {
+      setIsPractice(checked);
+    };
+  
     return (
         <div className="bg-white flex justify-between rounded-lg p-4 items-center">
             <div className="flex items-center gap-2">
@@ -11,20 +18,22 @@ const Navbar = () => {
                 <h3 className="text-xl font-semibold">Focus Mode</h3>
             </div>
 
-            <div>
+            <div className="h-11">
          
-                <Link to="/">
-                <Button color="default" variant="filled">
+                <Link to="/" >
+                <Button onClick={()=> setIsPractice(1)} className={`${isPractice === 1 ? "bg-gray-100 text-gray-800 rounded-md shadow-lg ":"bg-gray-200 text-gray-700 rounded-none shadow-none "} h-11 px-3`}>
                 Reading
                 </Button>
                     
                 </Link>
-                <Link to="practices">
-                <Button color="default" variant="filled">
+                <Link to="practices" >
+                <Button color="default" variant="filled" onClick={()=> setIsPractice(2)} className={`${isPractice === 2 ? "bg-gray-100 text-gray-800 rounded-md shadow-lg ":"bg-gray-200 text-gray-700 rounded-none shadow-none "} h-11 px-3`}>
                         Practice
                 </Button>
                     
                 </Link>
+
+                
             </div>
 
             <div>

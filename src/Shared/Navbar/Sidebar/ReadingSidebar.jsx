@@ -149,7 +149,7 @@ const ReadingSidebar = () => {
     { path: "/todo-list", label: "Todo List", icon: <FaNotesMedical /> },
     { path: "/complete", label: "Complete", icon: <FaCalendarCheck /> },
     { path: "/incomplete", label: "Incomplete", icon: <MdIncompleteCircle /> },
-    { path: "/daily-report", label: "Daily Report", icon: <FaListAlt /> },
+    { path: "/daily-reports", label: "Daily Report", icon: <FaListAlt /> },
     { path: "/weekly-report", label: "Weekly Report", icon: < SlCalender/> },
     { path: "/monthly-report", label: "Monthly Report", icon: <RiCalendarScheduleFill /> },
   ];

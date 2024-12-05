@@ -6,6 +6,7 @@ import Practices from "../Pages/Home/Practice/Practices";
 import ErrorPage from "../Layout/ErrorPage";
 
 import TodoList from "../Pages/TodoList/TodoList";
+import DailyReports from "../Pages/reports/DailyReports";
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path:'/todo-list',
                 element:<TodoList/>
+            },
+            {
+                path:'/daily-reports',
+                element:<DailyReports/>
             }
 
         ]
