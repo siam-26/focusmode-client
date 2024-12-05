@@ -23,7 +23,7 @@ const Home = () => {
           <Timer />
         </div>
       </div>
-      <div className="flex justify-center conter-center bg-white w-1/2 rounded-lg">
+      <div className="flex justify-center content-center bg-white w-1/2 rounded-lg">
         <div className=" w-4/5 bg-green-500">
           {/* for subject select */}
           <div>
