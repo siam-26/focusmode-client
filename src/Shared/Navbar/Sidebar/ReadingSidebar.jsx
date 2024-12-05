@@ -120,15 +120,18 @@ import {
   TiDocumentText 
 } from "react-icons/ti";
 import { 
-  CiStopwatch, 
   CiCalendar, 
 } from "react-icons/ci";
-import { MdChecklist, MdReport } from "react-icons/md";
+import { MdChecklist, MdIncompleteCircle, MdReport } from "react-icons/md";
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 import { useSidebar } from "../../../context/responsiveSidebar";
-import { FaCalendarCheck } from "react-icons/fa";
+import { FaCalendarCheck, FaHourglassHalf, FaListAlt, FaNotesMedical } from "react-icons/fa";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { IoTime } from "react-icons/io5";
+import { RiCalendarScheduleFill } from "react-icons/ri";
+import { SlCalender } from "react-icons/sl";
+
 
 const ReadingSidebar = () => {
   const { isCollapsed, toggleSidebar } = useSidebar();
@@ -141,14 +144,14 @@ const ReadingSidebar = () => {
 
   const menuItems = [
     { path: "/", label: "Home", icon: <TiHome /> },
-    { path: "/stopwatch", label: "Stopwatch", icon: <CiStopwatch /> },
-    { path: "/timer", label: "Timer", icon: <CiCalendar /> },
-    { path: "/todo-list", label: "Todo List", icon: <MdChecklist /> },
-    { path: "/complete", label: "Complete", icon: <AiOutlineCheckCircle /> },
-    { path: "/incomplete", label: "Incomplete", icon: <AiOutlineCloseCircle /> },
-    { path: "/daily-report", label: "Daily Report", icon: <FaCalendarCheck /> },
-    { path: "/weekly-report", label: "Weekly Report", icon: <MdReport /> },
-    { path: "/monthly-report", label: "Monthly Report", icon: <TiDocumentText /> },
+    { path: "/stopwatch", label: "Stopwatch", icon: <IoTime /> },
+    { path: "/timer", label: "Timer", icon: <FaHourglassHalf /> },
+    { path: "/todo-list", label: "Todo List", icon: <FaNotesMedical /> },
+    { path: "/complete", label: "Complete", icon: <FaCalendarCheck /> },
+    { path: "/incomplete", label: "Incomplete", icon: <MdIncompleteCircle /> },
+    { path: "/daily-report", label: "Daily Report", icon: <FaListAlt /> },
+    { path: "/weekly-report", label: "Weekly Report", icon: < SlCalender/> },
+    { path: "/monthly-report", label: "Monthly Report", icon: <RiCalendarScheduleFill /> },
   ];
 
   return (
@@ -158,7 +161,8 @@ const ReadingSidebar = () => {
       animate={isCollapsed ? "collapsed" : "expanded"}
     >
       
-        <div className={`bg-white rounded-xl shadow-lg p-3 flex flex-col items-start${isCollapsed ? " gap-5":" gap-4 "}`}>
+        <div className="bg-white h-[400px] overflow-hidden rounded-xl shadow-lg">
+        <div className={` p-3 flex flex-col items-start${isCollapsed ? " gap-6":" gap-5 "}`}>
               {/* Menu Items */}
               {menuItems
           // .filter(item => {
@@ -172,8 +176,8 @@ const ReadingSidebar = () => {
           .map((item, index) => (
             <Link key={index} to={item.path}>
               <div
-                className={`flex items-center gap-2 text-gray-500 font-semibold ${
-                  location.pathname === item.path ? "text-blue-500" : ""
+                className={`flex items-center gap-2 text-[#7e8088] font-semibold ${
+                  location.pathname === item.path ? "text-green-500" : ""
                 }`}
               >
                 <span className="text-xl">{item.icon}</span>
@@ -182,6 +186,7 @@ const ReadingSidebar = () => {
             </Link>
           ))}
 
+        </div>
         </div>
       {/* Toggle Button */}
       <div className="flex justify-end w-[85%]">

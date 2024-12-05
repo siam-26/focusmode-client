@@ -15,12 +15,12 @@ const Main = () => {
     return (
         <div>
             <Navbar />
-            <div className="flex gap-8  mt-5">
+            <div className="flex mt-5">
                 <div className="  border-0 ">
                     <ReadingSidebar />
                 </div>
                 <motion.div
-                    className="flex-1 p-5"
+                    className="flex-1"
                     variants={outletVariants}
                     animate={isCollapsed ? "collapsed" : "expanded"}
                 >
