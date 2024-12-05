@@ -12,10 +12,10 @@ const Navbar = () => {
     };
   
     return (
-        <div className="bg-white flex justify-between rounded-lg p-4 items-center">
+        <div className="bg-white flex justify-between rounded-lg p-3 md:p-4 items-center">
             <div className="flex items-center gap-2">
                 <FiArrowLeft />
-                <h3 className="text-xl font-semibold">Focus Mode</h3>
+                <h3 className="text-lg md:text-xl font-semibold">Focus Mode</h3>
             </div>
 
             <div className="h-11">

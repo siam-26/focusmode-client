@@ -9,7 +9,7 @@ function App() {
   return (
     <SidebarProvider>
       <div className="bg-gray-200 min-h-screen">
-        <div className=" w-10/12 mx-auto pt-5">
+        <div className="w-[95%] md:w-10/12 mx-auto pt-[10px] md:pt-5">
           <RouterProvider router={router} />
         </div>
       </div>
