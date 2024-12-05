@@ -1,18 +1,34 @@
 import { Outlet } from "react-router-dom"
 import Navbar from "../Shared/Navbar/Navbar"
 import ReadingSidebar from "../Shared/Navbar/Sidebar/ReadingSidebar"
+import { useSidebar } from "../context/responsiveSidebar";
+import { motion } from "framer-motion";
 
 const Main = () => {
+
+    const { isCollapsed } = useSidebar();
+
+    const outletVariants = {
+      expanded: { marginLeft: "10px", transition: { duration: 0.3 } },
+      collapsed: { marginLeft: "6px", transition: { duration: 0.3 } },
+    };
     return (
         <div>
             <Navbar />
-            <div className="flex gap-8 mt-5">
-                <div className="bg-white w-2/12 border-0 rounded-lg">
+            <div className="flex gap-8  mt-5">
+                <div className="  border-0 ">
                     <ReadingSidebar />
                 </div>
-                <div className="w-10/12">
+                <motion.div
+                    className="flex-1 p-5"
+                    variants={outletVariants}
+                    animate={isCollapsed ? "collapsed" : "expanded"}
+                >
                     <Outlet />
-                </div>
+                </motion.div>
+                {/* <div className="w-10/12">
+                    <Outlet />
+                </div> */}
             </div>
         </div>
     )

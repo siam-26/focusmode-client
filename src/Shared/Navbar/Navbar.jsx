@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import { FiArrowLeft } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -11,12 +12,19 @@ const Navbar = () => {
             </div>
 
             <div>
-                <Button color="default" variant="outlined">
-                    Reading
-                </Button>
+         
+                <Link to="/">
                 <Button color="default" variant="filled">
-                    Practice
+                Reading
                 </Button>
+                    
+                </Link>
+                <Link to="practices">
+                <Button color="default" variant="filled">
+                        Practice
+                </Button>
+                    
+                </Link>
             </div>
 
             <div>
