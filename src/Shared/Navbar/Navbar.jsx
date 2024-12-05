@@ -21,13 +21,13 @@ const Navbar = () => {
             <div className="h-11">
          
                 <Link to="/" >
-                <Button onClick={()=> setIsPractice(1)} className={`${isPractice === 1 ? "bg-gray-100 text-gray-800 rounded-md shadow-lg ":"bg-gray-200 text-gray-700 rounded-none shadow-none "} h-11 px-3`}>
+                <Button onClick={()=> setIsPractice(1)} className={`${isPractice === 2 ? "bg-gray-100 text-gray-800 rounded-md shadow-lg h-10":"bg-gray-400 text-gray-700 rounded-none shadow-none h-11"}  px-3`}>
                 Reading
                 </Button>
                     
                 </Link>
                 <Link to="practices" >
-                <Button color="default" variant="filled" onClick={()=> setIsPractice(2)} className={`${isPractice === 2 ? "bg-gray-100 text-gray-800 rounded-md shadow-lg ":"bg-gray-200 text-gray-700 rounded-none shadow-none "} h-11 px-3`}>
+                <Button color="default" variant="filled" onClick={()=> setIsPractice(2)} className={`${isPractice === 1 ? "bg-gray-100 text-gray-800 rounded-md shadow-lg h-10":"bg-gray-400 text-gray-700 rounded-none shadow-none h-11"} px-3`}>
                         Practice
                 </Button>
                     
