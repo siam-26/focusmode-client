@@ -7,6 +7,7 @@ import ErrorPage from "../Layout/ErrorPage";
 
 import TodoList from "../Pages/TodoList/TodoList";
 import DailyReports from "../Pages/reports/DailyReports";
+import Signup from "../Shared/Navbar/Signup";
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path:'/todo-list',
                 element:<TodoList/>
+            },
+            {
+                path:'/login',
+                element:<Signup/>
             },
             {
                 path:'/daily-reports',
