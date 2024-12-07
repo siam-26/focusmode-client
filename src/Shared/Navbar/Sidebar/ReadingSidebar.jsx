@@ -1,114 +1,3 @@
-// import { Link, useLocation } from "react-router-dom";
-// import { TiHome } from "react-icons/ti";
-// import { CiStopwatch } from "react-icons/ci";
-
-// const ReadingSidebar = () => {
-//   const location = useLocation()
-//   return (
-//     <div>
-    
-
-
-//       {
-//           location.pathname === "/" ?
-//           <div className="flex flex-col gap-4 px-3 py-5 rounded-lg">
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Home</p>
-//             </div>
-//           </Link>
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <CiStopwatch />
-//               <p>Stopwatch</p>
-//             </div>
-//           </Link>
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Timer</p>
-//             </div>
-//           </Link>
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Todo List</p>
-//             </div>
-//           </Link>
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Complete</p>
-//             </div>
-//           </Link>
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Incomplete</p>
-//             </div>
-//           </Link>
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Daily Report</p>
-//             </div>
-//           </Link>
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Weekly Report</p>
-//             </div>
-//           </Link>
-//           <Link to="">
-//             <div className="flex items-center gap-3 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Monthly Report</p>
-//             </div>
-//           </Link>
-//         </div>
-
-//           :
-
-
-//           <div className="flex flex-col  gap-4 px-3 py-5 rounded-lg">
-       
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Home</p>
-//             </div>
-//           </Link>
-       
-        
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Daily Report</p>
-//             </div>
-//           </Link>
-//           <Link to="">
-//             <div className="flex items-center gap-2 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Weekly Report</p>
-//             </div>
-//           </Link>
-//           <Link to="">
-//             <div className="flex items-center gap-3 text-gray-500 font-semibold">
-//               <TiHome />
-//               <p>Monthly Report</p>
-//             </div>
-//           </Link>
-//         </div>
-
-
-//         }
-//     </div>
-//   )
-// }
-
-// export default ReadingSidebar
-
 
 
 
@@ -153,11 +42,22 @@ const ReadingSidebar = () => {
     { path: "/weekly-report", label: "Weekly Report", icon: < SlCalender/> },
     { path: "/monthly-report", label: "Monthly Report", icon: <RiCalendarScheduleFill /> },
   ];
+  // const menuItems = [
+  //   { path: "/", label: "Home", icon: <TiHome /> },
+  //   { path: "/stopwatch", label: "Stopwatch", icon: <IoTime /> },
+  //   { path: "/timer", label: "Timer", icon: <FaHourglassHalf /> },
+  //   { path: "/todo-list", label: "Todo List", icon: <FaNotesMedical /> },
+  //   { path: "/complete", label: "Complete", icon: <FaCalendarCheck /> },
+  //   { path: "/incomplete", label: "Incomplete", icon: <MdIncompleteCircle /> },
+  //   { path: "/daily-reports", label: "Daily Report", icon: <FaListAlt /> },
+  //   { path: "/weekly-report", label: "Weekly Report", icon: < SlCalender/> },
+  //   { path: "/monthly-report", label: "Monthly Report", icon: <RiCalendarScheduleFill /> },
+  // ];
 
   return (
     <>
     <motion.div
-      className=" hidden lg:flex flex-col items-start gap-4 z-[100]"
+      className=" hidden lg:flex flex-col items-start gap-4 z-[100"
       variants={sidebarVariants}
       animate={isCollapsed ? "collapsed" : "expanded"}
     >
