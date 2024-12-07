@@ -72,7 +72,7 @@ const Home = () => {
           <DateTimeDisplay />
         </div>
 
-        <div className="mt-3 md:mt-5">
+        <div className="mt-3 md:mt-5 p-6 bg-white rounded-lg">
           <Timer time={time} timerRunning={timerRunning} />
         </div>
       </div>

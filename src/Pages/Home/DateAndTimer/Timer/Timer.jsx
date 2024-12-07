@@ -7,7 +7,7 @@ const Timer = ({ time, timerRunning }) => {
     };
   
     return (
-      <div className="bg-white p-7 rounded-lg">
+      <div className="bg-white rounded-lg">
         <div className="text-center py-6 bg-gray-100 rounded-sm">
           <p className="font-bold text-4xl text-gray-600">{formatTime(time)}</p>
         </div>
